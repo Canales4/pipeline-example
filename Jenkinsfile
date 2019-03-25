@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                echo 'building...'
+                git credentialsId: 'usuariogit', url: 'https://github.com/Canales4/pipeline-example.git'
             }
         }
         stage('Test') { 
