@@ -1,9 +1,14 @@
 pipeline {
     agent any 
     stages {
-        stage('Build') { 
+        stage('Checkout') { 
             steps {
                 git credentialsId: 'usuariogit', url: 'https://github.com/Canales4/pipeline-example.git'
+            }
+        }
+        stage('Build') { 
+            steps {
+                //
             }
         }
         stage('Test') { 
