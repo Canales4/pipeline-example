@@ -3,9 +3,7 @@ pipeline {
     stages{
         stage ('Compile Stage'){
             steps {
-                cd 'C:\Program Files (x86)\Jenkins\workspace\p1\src\main\java\laboratorio'
-                sh 'javac Controller.java'
-                sh 'java Controller'
+                sh 'javac C:/Program Files (x86)/Jenkins/workspace/p1/src/main/java/laboratorio/Controller.java| java Controller'
             }
         }
 
