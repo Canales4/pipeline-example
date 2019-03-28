@@ -1,22 +1,22 @@
 pipeline {
-    agent { docker { image 'maven:3.3.3'}}
+    agent any
     stages {
-        stage('Checkout') { 
+        stage('Checkout') {
             steps {
                 git credentialsId: 'usuariogit', url: 'https://github.com/Canales4/pipeline-example.git'
             }
         }
-        stage('Build') { 
+        stage('Build') {
             steps {
-                sh 'mvn --version'
+                echo 'Building...'
             }
         }
-        stage('Test') { 
+        stage('Test') {
             steps {
                 echo 'Testing...'
             }
         }
-        stage('Deploy') { 
+        stage('Deploy') {
             steps {
                 echo 'Deploying...'
             }
