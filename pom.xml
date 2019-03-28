@@ -96,16 +96,18 @@
 					</execution>
 				</executions>
 			</plugin>
+			<!-- Tomcat plugin -->
 			<plugin>
-          <groupId>org.apache.tomcat.maven</groupId>
-          <artifactId>tomcat7-maven-plugin</artifactId>
-          <version>2.2</version>
-          <configuration>
-            <url>http://localhost:8081/laboratorio</url>
-            <server>TomcatServer</server>
-            <path>/laboratorio</path>
-          </configuration>
-      </plugin>
+				 <groupId>org.apache.tomcat.maven</groupId>
+				 <artifactId>tomcat7-maven-plugin</artifactId>
+				 <version>2.2</version>
+				 <configuration>
+					  <url>http://localhost:8081/manager/text</url>  
+					  <server>TomcatServer</server>
+					  <username>admin</username>
+					  <password>admin</password>
+				 </configuration>
+			</plugin>
 			<plugin>
 				<!-- Mutation Test -->
 				<groupId>org.pitest</groupId>
