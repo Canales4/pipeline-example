@@ -18,9 +18,7 @@ pipeline {
         }
         stage('Deploy a tomcat') {
             steps {
-                sshagent(['tomcat-dev']) {
-                    sh 'ssh -o StrictHostKeyChecking=no target/*.war admin@192.168.1.106:/Program Files/Apache Software Foundation/Tomcat 8.5/webapps'
-                }
+                echo 'mvn tomcat7:deploy'
             }
         }
     }
