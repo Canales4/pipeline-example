@@ -17,9 +17,9 @@ pipeline {
           }
         }
         stage('Deploy a tomcat') {
-            sshagent(['tomcat-dev']){
-              sh 'ssh -o StrictHostKeyChecking=no -l cloudbees localhost uname -a'
-            }
+          steps {
+              echo '..'
+          }
         }
     }
 }
