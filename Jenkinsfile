@@ -16,9 +16,9 @@ pipeline {
               echo 'Testing...'
           }
         }
-        stage('Deploy a tomcat') {
+        stage('Deploy') {
             steps {
-                echo 'mvn tomcat7:deploy'
+                echo 'Deploying...'
             }
         }
     }
