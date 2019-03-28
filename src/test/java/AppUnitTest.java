@@ -1,3 +1,4 @@
+package test.java;
 
 import static org.junit.Assert.assertEquals;
 
@@ -9,7 +10,7 @@ public class AppUnitTest {
 	public void projectPackageOk() {
 		assertEquals("laboratorio", this.getClass().getPackage().getName());
 	}
-	
+
 	@Test
 	public void helloWorldOk() {
 		assertEquals("Hello Hector", new Controller().helloWorld("Hector"));
