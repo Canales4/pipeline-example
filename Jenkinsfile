@@ -8,10 +8,11 @@ pipeline {
         }
         stage('Building maven') {
             tools {
-              maven 'M3'
+              maven 'apache-maven-3.6.0'
             }
             steps {
                 echo 'Hello, Maven'
+                sh 'mvn --version'
             }
         }
     }
