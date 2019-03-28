@@ -1,5 +1,8 @@
 pipeline {
-    agent any
+    agent {
+      docker 'maven:3-alpine'
+      docker 'openjdk:8-jre'
+    }
     stages {
         stage('Checkout de git') {
             steps {
@@ -7,10 +10,6 @@ pipeline {
             }
         }
         stage('Build') {
-            agent {
-              docker 'maven:3-alpine'
-              docker 'openjdk:8-jre'
-            }
             steps {
                 echo 'Hello, Maven'
                 sh 'mvn --version'
