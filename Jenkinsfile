@@ -12,9 +12,9 @@ pipeline {
             }
         }
         stage('Test') {
-            steps {
-                echo 'Testing...'
-            }
+          steps {
+              sh './gradlew check'
+          }
         }
         stage('Deploy') {
             steps {
@@ -22,4 +22,9 @@ pipeline {
             }
         }
     }
+    post {
+    always {
+        junit 'build/reports/**/*.xml'
+    }
+}
 }
