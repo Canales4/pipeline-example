@@ -7,7 +7,7 @@ public class AppUnitTest {
 
 	@Test
 	public void projectPackageOk() {
-		assertEquals("laboratorio", this.getClass().getPackage().getName());
+		assertEquals("laboratorioTest", this.getClass().getPackage().getName());
 	}
 
 	@Test
