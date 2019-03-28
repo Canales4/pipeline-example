@@ -6,8 +6,8 @@ import org.junit.Test;
 public class AppUnitTest {
 
 	@Test
-	public void projectPackageOk() {
-		assertEquals("laboratorio", this.getClass().getPackage().getName());
+	public void projectPackageOk(AppUnitTest aput) {
+		assertEquals("laboratorio", aput.getClass().getPackage().getName());
 	}
 
 	@Test
