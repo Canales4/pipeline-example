@@ -16,10 +16,5 @@ pipeline {
               echo 'Testing...'
           }
         }
-        stage('Deploy a tomcat') {
-          steps {
-              echo '..'
-          }
-        }
     }
 }
