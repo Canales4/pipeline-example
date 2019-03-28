@@ -16,9 +16,11 @@ pipeline {
               sh './gradlew check'
           }
         }
-        stage('Deploy') {
+        stage('Deploy a tomcat') {
             steps {
-                echo 'Deploying...'
+                sshagent(['tomcat-dev']) {
+                    sh 'ssh -o StrictHostKeyChecking=no target/*.war admin@192.168.1.106:C:\Program Files\Apache Software Foundation\Tomcat 8.5\webapps'
+                }
             }
         }
     }
