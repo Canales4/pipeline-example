@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Test') {
           steps {
-              sh './gradlew check'
+              echo 'Testing...'
           }
         }
         stage('Deploy a tomcat') {
@@ -24,9 +24,4 @@ pipeline {
             }
         }
     }
-    post {
-    always {
-        junit 'build/reports/**/*.xml'
-    }
-}
 }
