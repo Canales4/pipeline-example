@@ -6,13 +6,22 @@ pipeline {
                 git credentialsId: 'usuariogit', url: 'https://github.com/Canales4/pipeline-example.git'
             }
         }
-        stage('Building maven') {
+        pipeline {
+            agent any
             tools {
-              maven 'M3'
+                maven 'maven360'
             }
-            steps {
-                echo 'Hello, Maven'
-                sh 'mvn --version'
+            stages {
+                stage('Build') {
+                    steps {
+                        sh 'mvn clean compile'
+                    }
+                }
+                stage('Test') {
+                    steps {
+                        sh 'mvn --version'
+                    }
+                }
             }
         }
     }
