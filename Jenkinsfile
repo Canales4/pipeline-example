@@ -14,5 +14,11 @@ pipeline {
                 sh 'mvn clean compile'
             }
         }
+        stage('Test') {
+            steps {
+                echo 'Ejecutando test'
+                sh 'mvn verify'
+            }
+        }
     }
 }
