@@ -15,4 +15,9 @@ public class AppUnitTest {
 		assertEquals("Hello Hector", new Controller().helloWorld("Hector"));
 		//assertEquals("Hello Hector", "Hello Hector");
 	}
+
+	@Test
+	public void muestraTitulo(){
+		
+	}
 }
