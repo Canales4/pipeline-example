@@ -22,7 +22,6 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'mvn archetype:generate -DgroupId=com.baeldung -DartifactId=tomcat-war-deployment -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false'
                 sh 'mvn tomcat7:deploy'
             }
         }
