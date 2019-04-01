@@ -23,7 +23,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'copiando war generado contra webapps de tomcat'
-                sh 'scp -r C:/Program Files \(x86\)/Jenkins/workspace/pipeline-maven/target/laboratorio.war C:/Program Files/Apache Software Foundation/Tomcat 8.5/webapps'
+                sh 'scp -r C:/Program Files (x86)/Jenkins/workspace/pipeline-maven/target/laboratorio.war C:/Program Files/Apache Software Foundation/Tomcat 8.5/webapps'
             }
         }
     }
