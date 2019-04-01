@@ -4,6 +4,7 @@ import org.junit.Test;
 import laboratorio.Controller;
 public class AppUnitTest {
 
+	//metodo para comprobar el nombre del paquete
 	@Test
 	public void projectPackageOk() {
 			assertEquals("laboratorio", this.getClass().getPackage().getName());
