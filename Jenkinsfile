@@ -1,10 +1,8 @@
+def dir = "/Program Files/Apache Software Foundation/Tomcat 8.5/webapps"
 pipeline {
     agent any
     tools {
         maven 'maven360'
-    }
-    define {
-        def dir = "/Program Files/Apache Software Foundation/Tomcat 8.5/webapps"
     }
     stages {
         stage('Checkout de git') {
