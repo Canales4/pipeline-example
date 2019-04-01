@@ -3,7 +3,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import laboratorio.Controller;
 public class AppUnitTest {
-
+	private WebDriver driver;
 	//metodo para comprobar el nombre del paquete
 	@Test
 	public void projectPackageOk() {
@@ -14,6 +14,16 @@ public class AppUnitTest {
 	public void helloWorldOk() {
 		assertEquals("Hello Hector", new Controller().helloWorld("Hector"));
 		//assertEquals("Hello Hector", "Hello Hector");
+	}
+
+	@Before
+	public void setUp() {
+		driver = new HtmlUnitDriver();
+	}
+
+	@After
+	public void tearDown() {
+		driver.close();
 	}
 
 	@Test
