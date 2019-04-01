@@ -103,9 +103,8 @@
 				 <version>2.2</version>
 				 <configuration>
 					  <url>http://localhost:8081/manager/text</url>
-					  <server>TomcatServer</server>
-					  <username>deployuser</username>
-					  <password>deployuser</password>
+						<server>TomcatServer</server>
+        		<path>/laboratorio</path>
 				 </configuration>
 			</plugin>
 			<plugin>
