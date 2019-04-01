@@ -25,10 +25,7 @@ pipeline {
                       sh 'mvn verify'
                 }, 'Quality Gate': {
                       timeout(time: 1, unit: 'HOURS') {
-                        def qg = waitForQualityGate()
-                        if (qg.status != 'OK') {
-                          error "Pipeline paralizado no cumple con los quality gates: ${qg.status}"
-                        }
+                        waitForQualityGate abortPipeline: true
                       }
                 }
             }
