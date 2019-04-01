@@ -14,17 +14,17 @@ pipeline {
                 sh 'mvn clean compile'
             }
         }
-        stage('SonarQube Analisis'){
-            steps{
-                withSonarQubeEnv('sonar-6'){
-                    sh 'mvn sonar:sonar'
-                }
-            }
-        }
         stage('Test') {
             steps {
-                echo 'Ejecutando test'
-                sh 'mvn verify'
+                step {
+                  echo 'Ejecutando test'
+                  sh 'mvn verify'
+                }
+                step{
+                  withSonarQubeEnv('sonar-6'){
+                      sh 'mvn sonar:sonar'
+                  }
+                }
             }
         }
         stage('Deploy') {
