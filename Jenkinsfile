@@ -19,14 +19,13 @@ pipeline {
                 parallel 'Sonar Test': {
                       withSonarQubeEnv('sonar-6'){
                           sh 'mvn sonar:sonar'
+                          timeout(time: 1, unit: 'HOURS') {
+                            waitForQualityGate abortPipeline: true
+                          }
                       }
                 }, 'Test': {
                       echo 'Ejecutando test'
                       sh 'mvn verify'
-                }, 'Quality Gate': {
-                      timeout(time: 1, unit: 'HOURS') {
-                        waitForQualityGate abortPipeline: true
-                      }
                 }
             }
         }
