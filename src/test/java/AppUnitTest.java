@@ -1,5 +1,4 @@
 import static org.junit.Assert.assertEquals;
-import laboratorio.Controller;
 import org.junit.Test;
 
 public class AppUnitTest {
