@@ -16,8 +16,7 @@ public class AppFunctionalTest {
 	@Test
 	public void tittlePageOk() {
 		RemoteWebDriver driver = chrome.getWebDriver();
-
-		//driver.get("http://" + DockerClientFactory.instance().dockerHostIpAddress() + ":8888/laboratorio/");
+		driver.get("http://" + DockerClientFactory.instance().dockerHostIpAddress() + ":8888/laboratorio/");
 		assertEquals("Laboratorio", driver.getTitle());
 	}
 }
