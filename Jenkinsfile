@@ -23,7 +23,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'copiando war generado contra webapps de tomcat'
-                sh "scp -o /target/laboratorio.war admin@localhost:/Program Files/Apache Software Foundation/Tomcat 8.5/webapps"
+                def dir = "C:/Program Files/Apache Software Foundation/Tomcat 8.5/webapps"
+                sh "scp -o /target/laboratorio.war admin@localhost:${dir}"
             }
         }
     }
