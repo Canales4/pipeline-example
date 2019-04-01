@@ -16,14 +16,13 @@ pipeline {
         }
         stage('Test') {
             steps {
-                step {
-                  echo 'Ejecutando test'
-                  sh 'mvn verify'
-                }
-                step{
-                  withSonarQubeEnv('sonar-6'){
-                      sh 'mvn sonar:sonar'
-                  }
+                parallel 'Sonar Test': {
+                      withSonarQubeEnv('sonar-6'){
+                          sh 'mvn sonar:sonar'
+                      }
+                }, 'Test': {
+                      echo 'Ejecutando test'
+                      sh 'mvn verify'
                 }
             }
         }
