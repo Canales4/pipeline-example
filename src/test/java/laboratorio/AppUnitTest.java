@@ -6,11 +6,7 @@ public class AppUnitTest {
 
 	@Test
 	public void projectPackageOk() {
-		try{
 			assertEquals("laboratorio", this.getClass().getPackage().getName());
-		}catch(NullPointerException e){
-			System.out.println(e);
-		}
 	}
 
 	@Test
