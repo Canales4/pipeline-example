@@ -24,7 +24,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'copiando war generado contra webapps de tomcat'
-                sh 'cp /target/laboratorio.war ${dir}'
+                sh 'cp **/*.war ${dir}'
             }
         }
     }
