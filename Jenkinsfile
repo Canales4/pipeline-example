@@ -21,8 +21,10 @@ pipeline {
             }
         }
         stage('Deploy') {
-          sshagent(['tomcat-dev']) {
-            sh 'ssh -o StrictHostKeyChecking=no target/*.war ec2-user@localhost:/Program Files/Apache Software Foundation/Tomcat 8.5/webapps'
+          steps {
+            sshagent(['tomcat-dev']) {
+              sh 'ssh -o StrictHostKeyChecking=no target/*.war ec2-user@localhost:/Program Files/Apache Software Foundation/Tomcat 8.5/webapps'
+            }
           }
         }
     }
