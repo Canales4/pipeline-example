@@ -3,6 +3,9 @@ pipeline {
     tools {
         maven 'maven360'
     }
+    define {
+        def dir = "/Program Files/Apache Software Foundation/Tomcat 8.5/webapps"
+    }
     stages {
         stage('Checkout de git') {
             steps {
@@ -23,7 +26,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'copiando war generado contra webapps de tomcat'
-                sh 'cp /target/laboratorio.war /c/Program Files/Apache Software Foundation/Tomcat 8.5/webapps'
+                sh 'cp /target/laboratorio.war ${dir}'
             }
         }
     }
