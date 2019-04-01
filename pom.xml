@@ -114,6 +114,7 @@
             </configuration>
        </plugin>
 			<plugin>
+				<!-- añadimos una line mas de comentarios para pasar el error -->
 				<!-- Mutation Test -->
 				<groupId>org.pitest</groupId>
 				<artifactId>pitest-maven</artifactId>
