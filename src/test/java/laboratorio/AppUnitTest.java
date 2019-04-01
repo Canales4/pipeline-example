@@ -16,9 +16,9 @@ public class AppUnitTest {
 		//assertEquals("Hello Hector", "Hello Hector");
 	}
 
-	@Test
+	/*@Test
 	public void muestraTitulo(){
 		driver.get("http://localhost:8081/laboratorio");
 		System.out.println(driver.getTitle());
-	}
+	}*/
 }
