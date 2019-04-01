@@ -21,11 +21,10 @@ pipeline {
             }
         }
         stage('Deploy') {
-          steps {
-            sshagent(['tomcat-dev']) {
-              sh 'ssh -o StrictHostKeyChecking=no target/*.war ec2-user@localhost:8081:/Program Files/Apache Software Foundation/Tomcat 8.5/webapps'
+            steps {
+                echo 'copiando war generado contra webapps de tomcat'
+                sh "cp **/*.war '/Program Files/Apache Software Foundation/Tomcat 8.5/webapps'"
             }
-          }
         }
     }
 }
