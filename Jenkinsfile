@@ -1,4 +1,3 @@
-def dir = "/Program Files/Apache Software Foundation/Tomcat 8.5/webapps"
 pipeline {
     agent any
     tools {
@@ -24,7 +23,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'copiando war generado contra webapps de tomcat'
-                sh 'cp **/*.war ${dir}'
+                sh 'cp **/*.war /Program Files/Apache Software Foundation/Tomcat 8.5/webapps'
             }
         }
     }
