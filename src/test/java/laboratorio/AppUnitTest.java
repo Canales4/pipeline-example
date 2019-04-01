@@ -1,4 +1,4 @@
-package laboratorio
+package laboratorio;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import laboratorio.Controller;
