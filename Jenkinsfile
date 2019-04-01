@@ -1,4 +1,5 @@
 pipeline {
+    def dir
     agent any
     tools {
         maven 'maven360'
@@ -23,7 +24,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'copiando war generado contra webapps de tomcat'
-                def dir = "C:/Program Files/Apache Software Foundation/Tomcat 8.5/webapps/"
+                dir = "C:/Program Files/Apache Software Foundation/Tomcat 8.5/webapps/"
                 sh "scp -o /target/laboratorio.war admin@localhost:${dir}"
             }
         }
