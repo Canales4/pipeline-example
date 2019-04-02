@@ -3,7 +3,6 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import laboratorio.Controller;
 public class AppUnitTest {
-	private WebDriver driver;
 	//metodo para comprobar el nombre del paquete
 	@Test
 	public void projectPackageOk() {
@@ -18,6 +17,11 @@ public class AppUnitTest {
 
 	@Test
 	public void muestraTitulo(){
-
+			WebDriver driver = new FirefoxDriver();
+			driver.get("http://localhost:8081/Laboratorio");
+			String l = driver.getTitle();
+			Assert.assertEquals("Laboratorio",l);
+  		System.out.println("Your page title Is : "+l);
+			driver.close();
 	}
 }
