@@ -17,12 +17,14 @@ pipeline {
         stage('Test') {
             steps {
                 parallel 'Sonar Test': {
-                      withSonarQubeEnv('sonar-6'){
-                          sh 'mvn sonar:sonar'
-                          timeout(time: 1, unit: 'HOURS') {
-                            waitForQualityGate abortPipeline: true
-                          }
-                      }
+                    script {
+                        withSonarQubeEnv('sonar-6'){
+                            sh 'mvn sonar:sonar'
+                        }
+                        timeout(time: 1, unit: 'SECONDS') {
+                            waitForQualityGate abortPipeline: false
+                        }
+                    }
                 }, 'Test': {
                       echo 'Ejecutando test'
                       sh 'mvn verify'
