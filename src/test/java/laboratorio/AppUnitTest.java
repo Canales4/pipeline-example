@@ -16,19 +16,8 @@ public class AppUnitTest {
 		//assertEquals("Hello Hector", "Hello Hector");
 	}
 
-	@Before
-	public void setUp() {
-		driver = new HtmlUnitDriver();
-	}
-
-	@After
-	public void tearDown() {
-		driver.close();
-	}
-
 	@Test
 	public void muestraTitulo(){
-		driver.get("http://localhost:8081/laboratorio");
-		System.out.println(driver.getTitle());
+
 	}
 }
