@@ -22,10 +22,7 @@ pipeline {
                             sh 'mvn sonar:sonar'
                         }
                         timeout(time: 10, unit: 'MINUTES') {
-                          def qg = waitForQualityGate()
-                          if (qg.status != 'OK') {
-                            error "Pipeline aborted due to quality gate failure: ${qg.status}"
-                          }
+                            waitForQualityGate abortPipeline: true
                         }
                     }
                 }, 'Test': {
