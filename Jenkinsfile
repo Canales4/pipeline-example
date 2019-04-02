@@ -21,9 +21,6 @@ pipeline {
                         withSonarQubeEnv('sonar-6'){
                             sh 'mvn sonar:sonar'
                         }
-                        timeout(time: 1, unit: 'SECONDS') {
-                            waitForQualityGate abortPipeline: false
-                        }
                     }
                 }, 'Test': {
                       echo 'Ejecutando test'
