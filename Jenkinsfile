@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'mvn clean compile'
+                sh 'mvn -B -DskipTests clean package'
             }
         }
         stage('Test') {
@@ -23,8 +23,7 @@ pipeline {
                         }
                     }
                 }, 'Test': {
-                      echo 'Ejecutando test'
-                      sh 'mvn verify'
+                      sh 'mvn test'
                 }
             }
         }
