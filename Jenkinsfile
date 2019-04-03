@@ -24,11 +24,13 @@ pipeline {
                     }
                 }, 'Quality Gates': {
                     script {
-                      timeout(time: 1, unit: 'HOURS') {
-                         def qg = waitForQualityGate()
-                         if (qg.status != 'OK') {
-                           error "Pipeline abortado por no pasar quality gates: ${qg.status}"
-                         }
+                      withSonarQubeEnv('sonar-6'){
+                        timeout(time: 1, unit: 'HOURS') {
+                           def qg = waitForQualityGate()
+                           if (qg.status != 'OK') {
+                             error "Pipeline abortado por no pasar quality gates: ${qg.status}"
+                           }
+                        }
                       }
                     }
                 }, 'Test': {
