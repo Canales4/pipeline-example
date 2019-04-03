@@ -22,6 +22,15 @@ pipeline {
                             sh 'mvn verify sonar:sonar'
                         }
                     }
+                }, 'Quality Gates': {
+                    script {
+                      timeout(time: 1, unit: 'HOURS') {
+                         def qg = waitForQualityGate()
+                         if (qg.status != 'OK') {
+                           error "Pipeline aborted due to quality gate failure: ${qg.status}"
+                         }
+                      }
+                    }
                 }, 'Test': {
                       sh 'mvn verify'
                 }
