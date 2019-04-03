@@ -23,7 +23,7 @@ pipeline {
                         }
                     }
                 }, 'Test': {
-                      sh 'mvn test'
+                      sh 'mvn verify'
                 }
             }
         }
@@ -31,8 +31,6 @@ pipeline {
             steps {
                 parallel 'Deploy sobre tomcat': {
                     sh 'mvn cargo:deploy'
-                }, 'Deploy Web Firefox': {
-                    sh 'mvn verify'
                 }
             }
         }

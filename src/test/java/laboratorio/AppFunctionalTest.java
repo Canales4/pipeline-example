@@ -9,9 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class AppFunctionalTest {
 
 	@Test
-	public void tittlePageOk() {
-		WebDriver driver = new FirefoxDriver();
-		driver.get("http://localhost:8081/laboratorio");
-		System.out.print(driver.getTitle());
+	public void tittlePageOk() throws IOException{
+		Process proc = Runtime.getRuntime().exec("java -jar C:\\Users\\6001290\\Downloads\\selenium-java-3.141.59\\client-combined-3.141.59.jar -enablePassThrough false");
 	}
 }
