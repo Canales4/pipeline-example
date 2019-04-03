@@ -23,13 +23,19 @@ pipeline {
                         }
                     }
                 }, 'Test': {
-                      sh 'mvn test'
+                      sh 'mvn verify'
                 }
             }
         }
         stage('Deploy') {
             steps {
+<<<<<<< HEAD
                 sh 'mvn cargo:deploy'
+=======
+                parallel 'Deploy sobre tomcat': {
+                    sh 'mvn cargo:deploy'
+                }
+>>>>>>> production
             }
         }
     }
