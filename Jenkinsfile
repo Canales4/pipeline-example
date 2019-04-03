@@ -19,7 +19,7 @@ pipeline {
                 parallel 'Sonar Test': {
                     script {
                         withSonarQubeEnv('sonar-6'){
-                            sh 'mvn sonar:sonar'
+                            sh 'mvn verify sonar:sonar'
                         }
                     }
                 }, 'Test': {
