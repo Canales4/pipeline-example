@@ -24,7 +24,6 @@ pipeline {
                     }
                 }, 'Test': {
                       sh 'mvn verify'
-                      sh 'mvn verify -Dwebdriver.type=chrome -Dwebdriver.chrome.driver=C:\\chromedriver.exe'
                 }
             }
         }
