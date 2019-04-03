@@ -23,7 +23,7 @@ pipeline {
                         }
                     }
                 }, 'Test': {
-                      sh 'mvn test'
+                      sh 'mvn verify'
                 }
             }
         }
