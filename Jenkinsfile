@@ -19,19 +19,25 @@ pipeline {
                 parallel 'Sonar Test': {
                     script {
                         withSonarQubeEnv('sonar-6'){
-                            sh 'mvn sonar:sonar'
+                            sh 'mvn verify sonar:sonar'
+                        }
+                        timeout(time: 30 , unit: 'MINUTES'){
+                          def qg = waitForQualityGate()
+                          if (qg.status != 'OK') {
+                            error "Pipeline abortado por no pasar quality gates: ${qg.status}"
+                          }
                         }
                     }
                 }, 'Test': {
                       sh 'mvn verify'
+                }, 'Mutant Test': {
+                      sh 'mvn -DwithHistory org.pitest:pitest-maven:mutationCoverage'
                 }
             }
         }
         stage('Deploy') {
             steps {
-                parallel 'Deploy sobre tomcat': {
-                    sh 'mvn cargo:deploy'
-                }
+                sh 'mvn cargo:deploy'
             }
         }
     }

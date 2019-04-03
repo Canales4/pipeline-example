@@ -126,6 +126,11 @@
 	</dependencies>
 	<build>
 		<plugins>
+			<plugin>
+		    <groupId>org.pitest</groupId>
+		    <artifactId>pitest-maven</artifactId>
+		    <version>1.4.2</version>
+ 			</plugin>
 			<!-- Cobertura -->
 			<plugin>
 				<groupId>org.jacoco</groupId>
