@@ -21,11 +21,9 @@ pipeline {
                         withSonarQubeEnv('sonar-6'){
                             sh 'mvn verify sonar:sonar'
                         }
-                        timeout(time: 1, unit: 'HOURS') {
-                           def qg = waitForQualityGate()
-                           if (qg.status != 'OK') {
-                             error "Pipeline abortado por no pasar quality gates: ${qg.status}"
-                           }
+                        def qg = waitForQualityGate()
+                        if (qg.status != 'OK') {
+                          error "Pipeline abortado por no pasar quality gates: ${qg.status}"
                         }
                     }
                 }, 'Test': {
