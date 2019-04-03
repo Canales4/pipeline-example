@@ -23,13 +23,17 @@ pipeline {
                         }
                     }
                 }, 'Test': {
-                      sh 'mvn verify'
+                      sh 'mvn test'
                 }
             }
         }
         stage('Deploy') {
             steps {
-                sh 'mvn cargo:deploy'
+                parallel 'Deploy sobre tomcat': {
+                    sh 'mvn cargo:deploy'
+                }, 'Deploy Web Firefox': {
+                    sh 'mvn verify'
+                }
             }
         }
     }
