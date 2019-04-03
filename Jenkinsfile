@@ -29,13 +29,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-<<<<<<< HEAD
                 sh 'mvn cargo:deploy'
-=======
-                parallel 'Deploy sobre tomcat': {
-                    sh 'mvn cargo:deploy'
-                }
->>>>>>> production
             }
         }
     }
