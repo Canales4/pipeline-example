@@ -30,7 +30,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'mvn cargo:deploy'
-                sh 'chrome:deploy'
             }
         }
     }
