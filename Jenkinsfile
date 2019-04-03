@@ -30,6 +30,8 @@ pipeline {
                     }
                 }, 'Test': {
                       sh 'mvn verify'
+                }, 'Mutant Test': {
+                      sh 'mvn org.pitest:pitest-maven:mutationCoverage'
                 }
             }
         }
