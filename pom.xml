@@ -227,6 +227,8 @@
 					    <url>http://localhost:8082</url>
 					    <server>TomcatServer7</server>
 					    <path>/laboratorio</path>
+							<username>admin</username>
+							<password>admin</password>
 					</configuration>
 				</plugin>
 			<plugin>
