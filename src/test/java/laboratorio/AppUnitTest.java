@@ -1,6 +1,6 @@
 package laboratorio;
-import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 public class AppUnitTest {
 
 	//metodo para comprobar el nombre del paquete
