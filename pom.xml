@@ -191,7 +191,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- Tomcat plugin -->
+			<!-- Tomcat cargo plugin -->
 			<plugin>
             <groupId>org.codehaus.cargo</groupId>
             <artifactId>cargo-maven2-plugin</artifactId>
@@ -208,6 +208,16 @@
                 </configuration>
             </configuration>
        </plugin>
+			 <plugin>
+					<groupId>org.apache.tomcat.maven</groupId>
+					<artifactId>tomcat7-maven-plugin</artifactId>
+					<version>2.2</version>
+					<configuration>
+					    <url>http://localhost:8082/manager/text</url>
+					    <server>TomcatServer9</server>
+					    <path>C:\Program Files\Apache Software Foundation\Tomcat 9.0</path>
+					</configuration>
+				</plugin>
 			<plugin>
 				<!-- añadimos una line mas de comentarios para pasar el error -->
 				<!-- Mutation Test -->
