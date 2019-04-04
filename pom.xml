@@ -228,7 +228,7 @@
 					<configuration>
 					    <url>http://localhost:8082</url>
 					    <server>TomcatServer9</server>
-					    <path>/${project.build.finalName}</path>
+					    <path>/laboratorio</path>
 					</configuration>
 				</plugin>
 			<plugin>
