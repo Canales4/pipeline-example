@@ -236,9 +236,6 @@
 				<artifactId>pitest-maven</artifactId>
 				<version>1.4.2</version>
 				<configuration>
-					<targetClasses>
-						<param>laboratorio.Controller</param>
-					</targetClasses>
 					<targetTests>
 						<param>laboratorio.AppFunctionalTest</param>
 						<param>laboratorio.AppUnitTest</param>
