@@ -13,5 +13,6 @@ public class AppFunctionalTest {
         System.setProperty("webdriver.chrome.driver", exePath);
         WebDriver driver = new ChromeDriver();
         driver.get("http://localhost:8081/laboratorio");
+				System.out.println(driver.getTitle());
 	}
 }
