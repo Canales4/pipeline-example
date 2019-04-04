@@ -37,7 +37,13 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'mvn cargo:deploy'
+                script {
+                  if (env.BRANCH_NAME == "master") {
+                      sh 'mvn cargo:deploy'
+                  }else{
+                      sh 'mvn tomcat7:deploy'
+                  }
+                }
             }
         }
     }
