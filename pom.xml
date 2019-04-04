@@ -226,7 +226,7 @@
 					<artifactId>tomcat7-maven-plugin</artifactId>
 					<version>2.2</version>
 					<configuration>
-					    <url>http://localhost:8082</url>
+					    <url>http://localhost:8082/manager/text</url>
 					    <server>TomcatServer9</server>
 					    <path>/laboratorio</path>
 					</configuration>
