@@ -235,13 +235,6 @@
 				<groupId>org.pitest</groupId>
 				<artifactId>pitest-maven</artifactId>
 				<version>1.4.2</version>
-					 <reportSets>
-							 <reportSet>
-									 <reports>
-											 <report>report</report>
-									 </reports>
-							 </reportSet>
-					 </reportSets>
 			</plugin>
 		</plugins>
 		<finalName>laboratorio</finalName>
