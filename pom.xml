@@ -226,7 +226,7 @@
 				 	 <configuration>
 							<url>http://localhost:8082/manager/text</url>
 							<server>TomcatServer</server>
-							<path>/</path>
+							<path>/laboratorio</path>
 							<username>admin</username>
 							<password>admin</password>
 					 </configuration>
