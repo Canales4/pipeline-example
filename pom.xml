@@ -237,8 +237,8 @@
 				<version>1.4.2</version>
 				<configuration>
 					<targetTests>
-						<param>laboratorio.AppFunctionalTest</param>
-						<param>laboratorio.AppUnitTest</param>
+						<param>com.laboratorio.AppFunctionalTest</param>
+						<param>com.laboratorio.AppUnitTest</param>
 					</targetTests>
 				</configuration>
 			</plugin>
