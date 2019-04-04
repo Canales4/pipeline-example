@@ -31,7 +31,7 @@ pipeline {
                 }, 'Test': {
                       sh 'mvn verify'
                 }, 'Mutant Test': {
-                      sh 'mvn test pitest:report'
+                      sh 'mvn test -DwithHistory pitest:report'
                 }
             }
         }
