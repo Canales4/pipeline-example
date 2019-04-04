@@ -41,7 +41,7 @@ pipeline {
                   if (env.BRANCH_NAME == "master") {
                       sh 'mvn cargo:deploy'
                   }else{
-                      sh 'mvn tomcat7:deploy'
+                      sh 'mvn TomcatServer9:deploy'
                   }
                 }
             }
