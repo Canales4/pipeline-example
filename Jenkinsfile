@@ -30,10 +30,12 @@ pipeline {
                     }
                 }, 'Test': {
                       sh 'mvn verify'
-                }, 'Mutant Test': {
-                      sh 'mvn pitest:mutationCoverage'
                 }
             }
+        }
+        stage('Mutation Test') {
+            sh 'mvn test'
+            sh 'mvn org.pitest:pitest-maven:mutationCoverage'
         }
         stage('Deploy') {
             steps {
