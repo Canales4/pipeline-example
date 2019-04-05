@@ -241,18 +241,6 @@
 				<groupId>org.pitest</groupId>
 				<artifactId>pitest-maven</artifactId>
 				<version>1.4.2</version>
-				<configuration>
-					<reportsDirectory>\src\test\pit-reports</reportsDirectory>
-					<outputFormats>
-						<outputFormat>XML</outputFormat>
-						<outputFormat>HTML</outputFormat>
-					</outputFormats>
-					<targetTests>
-						<param>laboratorio.AppUnitTest</param>
-					</targetTests>
-					<exportLineCoverage>true</exportLineCoverage>
-					<timestampedReports>false</timestampedReports>
-				</configuration>
 			</plugin>
 		</plugins>
 		<finalName>laboratorio</finalName>
