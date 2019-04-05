@@ -36,7 +36,7 @@ pipeline {
         stage('Mutation Test') {
             steps {
                 sh 'mvn test'
-                sh 'mvn org.pitest:pitest-maven:mutationCoverage'
+                sh 'mvn -e org.pitest:pitest-maven:mutationCoverage'
             }
         }
         stage('Deploy') {
