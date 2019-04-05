@@ -241,14 +241,6 @@
 				<groupId>org.pitest</groupId>
 				<artifactId>pitest-maven</artifactId>
 				<version>1.4.2</version>
-				<configuration>
-					<skip>false</skip>
-					<reportsDirectory>C:\Users\6001290\IdeaProjects\pipeline-example\target\pit-reports</reportsDirectory>
-					<sourceDataFormats>
-						<sourceDataFormat>HTML</sourceDataFormat>
-					</sourceDataFormats>
-				</configuration>
-
 			</plugin>
 		</plugins>
 		<finalName>laboratorio</finalName>
