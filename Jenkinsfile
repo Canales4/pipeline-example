@@ -32,6 +32,7 @@ pipeline {
                       sh 'mvn verify'
                 }, 'Mutant Test': {
                       sh 'mvn test -DwithHistory pitest:report'
+                      sh 'mvn pitest:mutationCoverage'
                 }
             }
         }
