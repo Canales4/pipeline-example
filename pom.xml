@@ -253,6 +253,7 @@
 				<artifactId>pitest-maven</artifactId>
 				<version>1.4.2</version>
 				<configuration>
+					<reportsDirectory>/src/test/pit-reports</reportsDirectory>
 					<outputFormats>
 						<outputFormat>XML</outputFormat>
 						<outputFormat>HTML</outputFormat>
