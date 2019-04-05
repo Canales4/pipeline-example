@@ -30,6 +30,7 @@ pipeline {
                     }
                 }, 'Test': {
                       sh 'mvn verify'
+                      sh 'mvn surefire-report:report'
                 }
             }
         }
