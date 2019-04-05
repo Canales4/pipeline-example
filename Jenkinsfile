@@ -35,7 +35,6 @@ pipeline {
         }
         stage('Mutation Test') {
             steps {
-                sh 'mvn clean  install'
                 sh 'mvn test pitest:mutationCoverage'
             }
         }
