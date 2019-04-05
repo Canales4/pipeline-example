@@ -241,6 +241,14 @@
 				<groupId>org.pitest</groupId>
 				<artifactId>pitest-maven</artifactId>
 				<version>1.4.2</version>
+				<configuration>
+					<targetClasses>
+						<param>com.viewnext.laboratorio.Controller</param>
+					</targetClasses>
+					<targetTests>
+						<param>com.viewnext.laboratorio.AppUnitTest</param>
+					</targetTests>
+				</configuration>
 			</plugin>
 		</plugins>
 		<finalName>laboratorio</finalName>
