@@ -31,12 +31,9 @@ pipeline {
                 }, 'Test': {
                       sh 'mvn verify'
                       sh 'mvn surefire-report:report'
+                      sh 'mvn clean install -Dskip.integration.tests=true org.pitest:pitest-maven:mutationCoverage'
+                      junit 'target/surefire-reports/*.xml'
                 }
-            }
-        }
-        stage('Mutation Test') {
-            steps {
-                sh 'mvn test pitest:mutationCoverage'
             }
         }
         stage('Deploy') {
