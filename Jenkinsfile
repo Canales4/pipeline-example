@@ -29,6 +29,7 @@ pipeline {
                         }
                     }
                 }, 'Test': {
+                      sh 'mvn verify'
                       sh 'mvn clean install -Dskip.integration.tests=true org.pitest:pitest-maven:mutationCoverage'
                       junit 'target/surefire-reports/*.xml'
                 }
